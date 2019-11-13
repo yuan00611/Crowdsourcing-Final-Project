@@ -1,0 +1,130 @@
+body{
+
+}
+
+div{
+
+}
+
+h1{
+	text-align: center;
+	color: blue;
+}
+
+h2{
+	padding-top: 30px;
+
+}
+
+ol{
+	margin-left: 20px;
+	padding-top: -5px;
+}
+
+img{
+	/*border: 1px solid black;*/
+
+}
+
+a{
+	font-size: 25px;
+}
+
+th{
+	padding-top: 10px;
+	font-size: 20px;
+}
+
+table img{
+	width: 300px;
+	height: 160px;
+}
+
+form{
+	text-align: center;
+}
+
+
+
+#instruction h2{
+	margin-left: 20px;
+}
+
+#instruction p{
+	margin-left: 35px;
+	font-size: 19px;
+}
+
+#instructpic{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+
+	justify-content: space-around;
+
+}
+
+.instructpicdiv{
+	border: 1px solid black;
+	/*flex-grow: 1 1;*/
+}
+.rightexample{
+	width: 600px;
+	height: 600px;
+}
+.wrongexample{
+	width: 600px;
+	height: 600px;
+}
+
+.ipic{
+	width: 400px;
+	height: 400px;
+	/*height: 50%;*/
+}
+
+.label{
+	width: 60px;
+}
+
+.start{
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.option{
+	text-align: center;
+}
+
+table{
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+#comment{
+	text-align: center;
+}
+
+#submitT{
+	text-align: center;
+}
+
+#question h2{
+	text-align: center;
+}
+
+.drag{
+	border: 1px solid black;
+}
+
+#dragArea{
+	height: 200px;
+
+}
+
+textarea{
+	width: 400px;
+	height: 100px;
+}
