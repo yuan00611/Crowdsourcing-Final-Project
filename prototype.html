@@ -5,6 +5,7 @@
 	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
 	<link rel="stylesheet" type="text/css" href="index.css" />
     <script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -62,15 +63,38 @@
 	<p>An image showing a person hand caressing a black dog.</p>
 	<p>Black dog under the table wanting to get petted.</p>
 	<p>I see a black dog getting his face rubbed.</p>
-	<button onclick="clear()">Clear All</button>
-	<button onclick="undo()">Undo</button>
-
-	<div id="dragArea">
-		
-	</div>
-
 
 </div>
+
+
+<div id="dragArea">
+	<p>
+		<span> I think the most important element is</span>
+		<select class="rankList"></select>
+	</p>
+	<p>
+		<span> I think the second important element is</span>
+		<select class="rankList"></select>
+	</p>
+	<p>
+		<span> I think the third important element is</span>
+		<select class="rankList"></select>
+	</p>
+	<p>
+		<span> I think the forth important element is</span>
+		<select class="rankList"></select>
+	</p>
+	<p>
+		<span> I think the fifth important element is</span>
+		<select class="rankList"></select>
+	</p>
+</div>
+
+<div>
+	<button onclick="undo()">Undo</button>
+	<button onclick="clearAll()">Clear All</button>
+</div>
+
 
 <div>
 	<h1> Choose the best caption </h1>
@@ -105,6 +129,6 @@
 
 
 	<script type="text/javascript" src="index.js"></script>
-
+	
 </body>
 </html>
