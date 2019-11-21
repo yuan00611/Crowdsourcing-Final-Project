@@ -1,5 +1,5 @@
 body{
-
+	margin: 0;
 }
 
 div{
@@ -44,10 +44,20 @@ form{
 	text-align: center;
 }
 
-
+#sidebar {
+	list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 35%;
+	background-color: #FFFFFF;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
 
 #instruction h2{
 	margin-left: 20px;
+	font-family: verdana;
 }
 
 #instruction p{
@@ -55,19 +65,26 @@ form{
 	font-size: 19px;
 }
 
-#instructpic{
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-
-	justify-content: space-around;
-
+#content {
+	margin-left:35%;
+	padding:1px;
+	height:1000px;
 }
+
+/* #instructpic{ */
+	/* display: flex; */
+	/* flex-direction: row; */
+	/* flex-wrap: nowrap; */
+
+	/* justify-content: space-around; */
+
+/* } */
 
 .instructpicdiv{
 	border: 1px solid black;
 	/*flex-grow: 1 1;*/
 }
+
 .rightexample{
 	width: 600px;
 	height: 600px;
