@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Caption Task</title>
+	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+	<link rel="stylesheet" type="text/css" href="index.css" />
+    <script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+<div id="sidebar">
+	<div id="instruction">
+		<h2> Instructions</h2>
+		<p>Thank you for joining our research. Your participation will help to improve automatically-generated image captions and help blind and visually impaired
+		people learn about the image.</p>
+		<p>To guarantee the quality of work, please read carefully the following instructions. A test needs to be passed before starting to work.</p>
+		<ol>
+			<li>Look at the image.</li>
+			<li>You will be shown 5 captions. Please highlight the words/phrases you think are most important to understand the image. Click your mouse and drag until the word ends will highlight the word you hope to mark.</li>
+			<li>You need to highlight 5 words/phrases. Only highlight the words with substantial meanings, such as "dog", "happy", "run" etc. instad of "at/in/on" "a/an/the" or "kind of".</li>
+			<li>The word highlighted needs to be complete.</li>
+			<li>You can "undo" your last move, or "clear all" previous marks.</li>
+			<li>Input reasons for your selection.</li>
+			<li>Choose one of your favorite caption.</li>
+			<li>Input reasons for your choice.</li>
+			<li>Click "Submit" and done!</li>
+		</ol>
+			<!--<This task aims to help blind and visually impaired people to understand images. The research results will help to improve the performance of machine in automatically generating description of the images.</p>
+			<p>Thank you for your participation and work. It might help a lot of people with visual impairment in the future.>-->
+		<script type="text/javascript" src="menulist.js"></script>
+		<button id="hide" type="button">Hide</button>
+		<button id="show" type="button">Show Examples</button>
+		<div id="p1">
+			<div id="instructpic">
+				<div class="instructpicdiv">
+					<h3>Right example</h3>
+					<img class="ipic" src="img/rightexample.png">
+				</div>
+				<div class="instructpicdiv">
+					<h3>Wrong example</h3>
+					<img class="ipic" src="img/wrongexample.png">
+	 			</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div id="content">
+	<div class="start">
+		<a href="#train">The task will officially start after completing the following test:</a>
+	</div>
+	<div id="train"></div>
+	<div class="start">
+		<a href="#question">Let's start!</a>
+	</div>
+	<div id="question" onmouseup="labelText()">
+		<h3> Highlight the 5 important elements and rank them</h3>
+		<img src="img/dog.png">
+		<p>A black dog is poking his head from under a desk or table, and a person is holding its red collar.</p>
+		<p>A black dog is trying to get attention from under a desk.</p>
+		<p>An image showing a person hand caressing a black dog.</p>
+		<p>Black dog under the table wanting to get petted.</p>
+		<p>I see a black dog getting his face rubbed.</p>
+	</div>
+	<div id="dragArea">
+		<p>
+			<span> I think the most important element is</span>
+			<select class="rankList"></select>
+		</p>
+		<p>
+			<span> I think the second important element is</span>
+			<select class="rankList"></select>
+		</p>
+		<p>
+			<span> I think the third important element is</span>
+			<select class="rankList"></select>
+		</p>
+		<p>
+			<span> I think the forth important element is</span>
+			<select class="rankList"></select>
+		</p>
+		<p>
+			<span> I think the fifth important element is</span>
+			<select class="rankList"></select>
+		</p>
+	</div>
+	<div>
+		<button onclick="undo()">Undo</button>
+		<button onclick="clearAll()">Clear All</button>
+	</div>
+	<div>
+		<h3> Choose the best caption </h3>
+		<form>
+		<input type="radio" name="caption">
+		<label>A black dog is poking his head from under a desk or table, and a person is holding its red collar.</label>
+		<br>
+		<input type="radio" name="caption">
+		<label>A black dog is trying to get attention from under a desk.</label>
+		<br>
+		<input type="radio" name="caption">
+		<label>An image showing a person hand caressing a black dog.</label>
+		<br>
+		<input type="radio" name="caption">
+		<label>Black dog under the table wanting to get petted.</label>
+		<br>
+		<input type="radio" name="caption">
+		<label>I see a black dog getting his face rubbed.</label>
+		<br>
+
+		<label>Explain the reason</label>
+		<textarea></textarea>
+		<br>
+		<input type="submit" name="s" >
+
+
+	</form>
+	</div>
+</div>
+
+<script type="text/javascript" src="index.js"></script>
+</body>
+</html>
