@@ -6,22 +6,17 @@ h1{
 	font-family: "Open Sans";
 	margin: 5px;
 	padding: 15px;
-	color: #C4D037;
 }
 
 h2{
 	padding-top: 30px;
 	font-family: Roboto;
+	color: #C4D037;
 }
 
-ol{
-	margin-left: 20px;
-	padding-top: -5px;
-}
-
-img{
-	/*border: 1px solid black;*/
-
+h3{
+	padding-left: 40px;
+	font-family: Roboto;
 }
 
 a{
@@ -49,21 +44,29 @@ table img{
 	overflow: auto;
 	text-align: left;
 	border-right: 2px solid silver;
+	font-family: "Roboto";
 }
 
-#instruction h2{
-	margin-left: 20px;
-	font-family: Roboto;
+#sidebar ol{
+	color: #1E2621;
+}
+
+#instruction ul{
+	color: =#1E2621;
 }
 
 #instruction p{
 	margin-left: 35px;
-	font-size: 19px;
 }
+
 #content h1{
-	text-align: center;
-	font-family: "Open Sans";
+	text-align: left;
+	color: white;
+	background-color: #C4D037;
+	border-radius: 5px;
+	size: 30px;
 }
+
 #content {
 	margin-left:40%;
 	padding:1px;
@@ -79,19 +82,20 @@ table img{
 
 /* } */
 
-.instructpicdiv{
-	border: 1px solid black;
-	/*flex-grow: 1 1;*/
+.step{
+	color: white;
+	background-color: #FDC14C;
+	margin: 10px;
+	border-radius: 5px;
 }
 
-.rightexample{
-	width: 600px;
+.instructpicdiv img{
+	width:600px;
 	height: 600px;
-}
-.wrongexample{
-	width: 600px;
-	height: 600px;
-}
+	padding: 0px;
+	border: 0px;
+	}
+
 
 .ipic{
 	width: 400px;
