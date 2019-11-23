@@ -3,21 +3,21 @@ body{
 }
 
 h1{
-	font-family: "Open Sans";
+	font-family: 'Oleo Script', cursive;
 	margin: 5px;
 	padding: 15px;
 }
 
 h2{
 	padding-top: 30px;
-	font-family: Roboto;
+	font-family:'Open Sans', sans-serif;
 	font-size: 18pt;
 	color: #C4D037;
 }
 
 h3{
 	padding-left: 40px;
-	font-family: Roboto;
+	font-family: 'Roboto', sans-serif;
 }
 
 a{
@@ -30,7 +30,7 @@ th{
 }
 
 p{
-	font-family: "Roboto";
+	font-family: 'Roboto', sans-serif;
 }
 
 #sidebar {
@@ -66,7 +66,7 @@ p{
   /*padding: 10px;*/
   width: 70%;
   transition: all 0.5s;
-  font:bold 18pt Roboto, "Times New Roman";
+  font:bold 18pt 'Roboto', sans-serif;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -189,7 +189,7 @@ p{
 }
 
 #capImg img{
-	margin-left:37%;
+	margin-left:40%;
 	position: fixed;
 	width: 20%;
 	height: auto;
@@ -270,7 +270,7 @@ textarea{
 	border-radius:5px;
 	border:1px solid silver;
 	font-size: 14pt;
-	font-family: "Bradley Hand";
+	font-family: 'Gochi Hand', cursive;
 }
 
 input[type=submit]{
@@ -280,7 +280,7 @@ input[type=submit]{
 	cursor:pointer;
 	-webkit-border-radius:10px;
 	border-radius:5px;
-	font:bold 18pt arial;
+	font:bold 18pt 'Oleo Script';
 	color: white;
 	margin-left: 16%;
 	margin-top: 20px;
