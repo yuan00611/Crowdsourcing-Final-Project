@@ -64,9 +64,11 @@ p{
   text-align: left;
   border: none;
   /*padding: 10px;*/
-  width: 50%;
+  width: 70%;
   transition: all 0.5s;
   font:bold 18pt Roboto, "Times New Roman";
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 #show span {
@@ -103,6 +105,8 @@ p{
   width: 50%;
   transition: all 0.5s;
   font:bold 18pt Roboto, "Times New Roman";
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 #bkd span {
@@ -130,8 +134,16 @@ p{
   right: 0;
 }
 
+#moreinfo {
+	padding: 10px;
+	margin-bottom: 30px;
+}
 
-
+#content {
+	margin-left:35%;
+	padding:1px;
+	height:1000px;
+}
 #content h1{
 	text-align: left;
 	color: white;
@@ -144,17 +156,17 @@ p{
 	margin-top: 10px;
 }
 
-#content {
-	margin-left:35%;
-	padding:1px;
-	height:1000px;
-}
 
-.step{
+
+/*.step{
 	color: white;
 	background-color: #FDC14C;
 	margin: 10px;
 	border-radius: 5px;
+}*/
+
+#example{
+	vertical-align: middle;
 }
 
 #example img{
@@ -174,12 +186,6 @@ p{
 
 .option{
 	text-align: center;
-}
-
-table{
-	margin-left: auto;
-	margin-right: auto;
-
 }
 
 #capImg img{
@@ -212,6 +218,7 @@ font-family: "Roboto";
 .ud:hover {
   background-color: #FDC14C;
   color: white;
+  cursor: pointer;
 }
 
 .ca {
@@ -227,6 +234,7 @@ font-family: "Roboto";
 
 .ca:hover {
   background-color: #E86D8C;
+  cursor: pointer;
   color: white;
 }
 
@@ -276,6 +284,7 @@ input[type=submit]{
 	color: white;
 	margin-left: 16%;
 	margin-top: 20px;
+	margin-bottom: 30px;
 }
 input:hover {
   background-color: #A3AD2D;

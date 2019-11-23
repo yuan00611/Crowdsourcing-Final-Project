@@ -33,7 +33,7 @@
 				<ul>
 					<li>Click and drag to highlight the elements you think are important.</li>
 					<br>
-					<li>You can change your selection by clicking the Undo button to withdraw your last move, or the Clear All button to redo the test.</li>
+					<li>You can change your selection by clicking the <i><b>undo last step</b></i> button to withdraw your last move, or the <i><b>clear all</b></i> button to redo the test.</li>
 				</ul>
 
 			<!--<This task aims to help blind and visually impaired people to understand images. The research results will help to improve the performance of machine in automatically generating description of the images.</p>
@@ -43,18 +43,23 @@
 		<button id="show" type="button"><span>Check examples</span></button>
 		<br>
 		<div id="example" style="display:none">
-				<h3>Right example</h3>
-					<img src="img/rightexample.png">
-				<br>
-				<h3>Wrong example</h3>
-					<img src="img/wrongexample.png">
+			<table>
+				<tr>
+					<td>
+						<h3>Right example</h3>
+						<img src="img/rightexample.png">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<h3>Wrong example</h3>
+						<img src="img/wrongexample.png">
+					</td>
+				</tr>
+			</table>	
 	 	</div>
-	 	<br>
 	 	<button id="bkd" type="button"><span>Learn more</span></button>
 		<div id="moreinfo" style="display:none">
-			<br>
-
-			<br>
 			<p>This task aims to help blind and visually impaired people to understand images. The research results will help to improve the performance of machine in automatically generating description of the images.</p>
 	 	</div>
 	</div>
@@ -115,8 +120,8 @@
 		</div>
 	</div>
 	<div>
-		<button class="ud" onclick="undo()">Undo</button>
-		<button class="ca" onclick="clearAll()">Clear All</button>
+		<button class="ud" onclick="undo()">undo last step</button>
+		<button class="ca" onclick="clearAll()">clear all</button>
 	</div>
 
 	<div id="captext3">
