@@ -32,26 +32,31 @@
 			<h3>Operation</h3>
 				<ul>
 					<li>Click and drag to highlight the elements you think are important.</li>
-					<li>You can change your selection by clicking the Undo button to withdraw your last move, or the clear all button to redo the test.</li>
+					<br>
+					<li>You can change your selection by clicking the Undo button to withdraw your last move, or the Clear All button to redo the test.</li>
 				</ul>
 
 			<!--<This task aims to help blind and visually impaired people to understand images. The research results will help to improve the performance of machine in automatically generating description of the images.</p>
 			<p>Thank you for your participation and work. It might help a lot of people with visual impairment in the future.>-->
 		<script type="text/javascript" src="menulist.js"></script>
-		<button id="hide" type="button">Hide</button>
-		<button id="show" type="button">Show Examples</button>
-		<div id="p1">
-			<div id="instructpic">
-				<div class="instructpicdiv">
-					<h3>Right example</h3>
-					<img class="ipic" src="img/rightexample.png">
-				</div>
-				<div class="instructpicdiv">
-					<h3>Wrong example</h3>
-					<img class="ipic" src="img/wrongexample.png">
-	 			</div>
-			</div>
-		</div>
+
+		<button id="show" type="button"><span>Check examples</span></button>
+		<br>
+		<div id="example" style="display:none">
+				<h3>Right example</h3>
+					<img src="img/rightexample.png">
+				<br>
+				<h3>Wrong example</h3>
+					<img src="img/wrongexample.png">
+	 	</div>
+	 	<br>
+	 	<button id="bkd" type="button"><span>Learn more</span></button>
+		<div id="moreinfo" style="display:none">
+			<br>
+
+			<br>
+			<p>This task aims to help blind and visually impaired people to understand images. The research results will help to improve the performance of machine in automatically generating description of the images.</p>
+	 	</div>
 	</div>
 </div>
 
@@ -74,7 +79,7 @@
 	<h1>Select the important things in the captions!</h1>
 	<div id="question" onmouseup="labelText()">
 		<h3> Task 1: Highlight the 5 important elements</h3>
-		<div id="capImg"></div>
+		<div id="capImg"><img src="img/dog.png"></div>
 		<div id="captext1">
 			<p class="c1"></p>
 			<p class="c2"></p>
@@ -110,8 +115,8 @@
 		</div>
 	</div>
 	<div>
-		<button onclick="undo()">Undo</button>
-		<button onclick="clearAll()">Clear All</button>
+		<button class="ud" onclick="undo()">Undo</button>
+		<button class="ca" onclick="clearAll()">Clear All</button>
 	</div>
 
 	<div id="captext3">
@@ -132,8 +137,11 @@
 		<input type="radio" name="best" id="b5">
 		<label class="c5"></label>
 		<br>
-
-		<label>Explain the reason</label>
+		<br>
+		<br>
+		<label id="reason">Explain the reason</label>
+		<br>
+		<br>
 		<textarea name="reason"></textarea>
 		<br>
 		<input type="submit" name="s" >

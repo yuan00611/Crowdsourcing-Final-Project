@@ -1,8 +1,24 @@
-$(document).ready(function(){
-  $("#hide").click(function(){
-  $("#p1").hide();
+// $(document).ready(function(){
+//   $("#hide").click(function(){
+//   $("#example").hide();
+//   });
+//   $("#show").click(function(){
+//   $("#example").show();
+//   });
+// });
+
+ $(function(){
+ 	$("#show").click(function(){
+ 		$("#example").toggle();
+ 	});
   });
-  $("#show").click(function(){
-  $("#p1").show();
+
+ $(function(){
+ 	$("#bkd").click(function(){
+ 		$("#moreinfo").toggle();
+ 	});
   });
-});
+
+// $(function(){
+
+// })
