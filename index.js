@@ -133,15 +133,6 @@ function deleteOption(list){
   //list.options[index] = null;
 }
 
-window.addEventListener('keypress', function(evt){
-  undo();
-});
-
-
-
-
-
-
 
 
 /*
