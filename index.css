@@ -32,6 +32,9 @@ table img{
 	width: 300px;
 	height: 160px;
 }
+p{
+	font-family: "Roboto";
+}
 
 #sidebar {
 	list-style-type: none;
@@ -44,7 +47,6 @@ table img{
 	overflow: auto;
 	text-align: left;
 	border-right: 2px solid silver;
-	font-family: "Roboto";
 }
 
 #sidebar ol{
@@ -63,8 +65,12 @@ table img{
 	text-align: left;
 	color: white;
 	background-color: #C4D037;
-	border-radius: 5px;
-	size: 30px;
+	border-radius: 10px;
+	size: 20px;
+	height: 60px;
+	line-height: 60px;
+	padding-left: 20px;
+	margin-top: 10px;
 }
 
 #content {
@@ -72,15 +78,6 @@ table img{
 	padding:1px;
 	height:1000px;
 }
-
-/* #instructpic{ */
-	/* display: flex; */
-	/* flex-direction: row; */
-	/* flex-wrap: nowrap; */
-
-	/* justify-content: space-around; */
-
-/* } */
 
 .step{
 	color: white;
@@ -123,6 +120,18 @@ table{
 
 }
 
+#capImg {
+	margin-left: 50%;
+	position: fixed;
+	width: 500px;
+	height: auto;
+}
+#captext1{
+
+}
+#captext3{
+font-family: "Roboto";
+}
 #comment{
 	text-align: center;
 }

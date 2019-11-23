@@ -1,6 +1,43 @@
 var i = 0;
 var text = [];
 
+var imagePath = turkGetParam('image');
+var caption1 = turkGetParam('cap1');
+var caption2 = turkGetParam('cap2');
+var caption3 = turkGetParam('cap3');
+var caption4 = turkGetParam('cap4');
+var caption5 = turkGetParam('cap5');
+
+//console.log(imagePath);
+//console.log(caption1);
+
+var img = document.createElement("img");
+img.src = imagePath;
+var imgObj = document.getElementById("capImg");
+imgObj.appendChild(img);
+
+var cList1 = document.getElementsByClassName("c1");
+var cList2 = document.getElementsByClassName("c2");
+var cList3 = document.getElementsByClassName("c3");
+var cList4 = document.getElementsByClassName("c4");
+var cList5 = document.getElementsByClassName("c5");
+
+insertCaption(cList1, caption1);
+insertCaption(cList2, caption2);
+insertCaption(cList3, caption3);
+insertCaption(cList4, caption4);
+insertCaption(cList5, caption5);
+
+
+turkSetAssignmentID();
+
+function insertCaption(list, caption){
+  for(var k = 0; k < list.length; k++){
+    list[k].innerHTML = decodeURI(caption);
+  }
+}
+
+
 function labelText()
 {
 	var selection = window.getSelection();
@@ -26,6 +63,8 @@ function labelText()
 
     addOption(l, node.innerText);
     text.push(node.innerText);
+
+    document.getElementById("reportId").value = JSON.stringify(text);
     //console.log(text);
     //console.log(l.length);
 
