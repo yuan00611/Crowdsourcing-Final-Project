@@ -10,6 +10,7 @@ var caption5 = turkGetParam('cap5');
 
 //console.log(imagePath);
 //console.log(caption1);
+document.getElementById("reportId").name = imagePath;
 
 var img = document.createElement("img");
 img.src = imagePath;
@@ -21,6 +22,13 @@ var cList2 = document.getElementsByClassName("c2");
 var cList3 = document.getElementsByClassName("c3");
 var cList4 = document.getElementsByClassName("c4");
 var cList5 = document.getElementsByClassName("c5");
+
+document.getElementById("b1").value = decodeURI(caption1);
+document.getElementById("b2").value = decodeURI(caption2);
+document.getElementById("b3").value = decodeURI(caption3);
+document.getElementById("b4").value = decodeURI(caption4);
+document.getElementById("b5").value = decodeURI(caption5);
+
 
 insertCaption(cList1, caption1);
 insertCaption(cList2, caption2);
