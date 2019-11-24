@@ -286,6 +286,20 @@ input[type=submit]{
 	margin-top: 20px;
 	margin-bottom: 30px;
 }
+
+button{
+	padding: 20px 40px;
+	background:#C4D037;
+	border:0 none;
+	cursor:pointer;
+	-webkit-border-radius:10px;
+	border-radius:5px;
+	font:bold 18pt arial;
+	color: white;
+	margin-left: 16%;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
 input:hover {
   background-color: #A3AD2D;
 }
