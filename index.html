@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="index.css" />
     <script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Oleo+Script|Open+Sans|Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -120,14 +121,14 @@
 		</div>
 	</div>
 	<div>
-		<button class="ud" onclick="undo()">undo last step</button>
-		<button class="ca" onclick="clearAll()">clear all</button>
+		<button class="ud" type="button" onclick="undo()">undo last step</button>
+		<button class="ca" type="button" onclick="clearAll()">clear all</button>
 	</div>
 
 	<div id="captext3">
 		<h3> Task 3: Choose the best caption </h3>
 		
-		<input type="radio" name="best" id="b1" required>
+		<input type="radio" name="best" id="b1" oninvalid="setCustomValidity('You need to at least choose one option.');" onchange="setCustomValidity('');" required>
 		<label class="c1"></label>
 		<br>
 		<input type="radio" name="best" id="b2">
@@ -147,9 +148,9 @@
 		<label id="reason">Explain the reason</label>
 		<br>
 		<br>
-		<textarea name="reason"></textarea>
+		<textarea name="reason" oninvalid="setCustomValidity('You need to write your reason.');" onchange="setCustomValidity('');" required></textarea>
 		<br>
-		<input type="submit" name="s" >
+		<input type="submit" name="s" value="Submit">
 
 
 	</div>
