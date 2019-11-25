@@ -133,6 +133,27 @@ function deleteOption(list){
   //list.options[index] = null;
 }
 
+var subject = false;
+function testify(){
+  for(var u = 0; u < text.length; u++){
+    if (text[u].search == -1) {
+      subject = false;
+    }else {
+      subject = true;
+    }
+  }
+  if (subject) {
+    alert('Yeah! You have pass the test, you can start to do the formal task.')
+    clearAll();
+    $(function(){
+      $("#prototype").toggle();
+      $("#content").toggle();
+    });
+  }else {
+    alert('Do it again! You should finish all three part of task. You should also verify whether you have chose the important part of the piture!')
+  }
+}
+
 
 
 /*

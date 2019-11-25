@@ -66,38 +66,24 @@
 	</div>
 </div>
 
-	<!-- <div class="start">
-		<a href="#train">The task will officially start after completing the following test:</a>
-	</div>
-	<div id="train"></div>
-	<div class="start">
-		<a href="#question">Let's start!</a>
-	</div> -->
+<!-- test part -->
 
-<!-- 以下为德元动态更新部分 -->
-
-<form name='mturk_form' method='post' id='mturk_form' action='https://workersandbox.mturk.com/mturk/externalSubmit'>
-<!-- <form name='mturk_form' method='post' id='mturk_form' action='https://www.mturk.com/mturk/externalSubmit'> -->
-<input type="hidden" value="" name="assignmentId" id="assignmentId">
-<input type="hidden" value="" id="reportId">
-
-<div id="content">
+<div id="prototype">
+	<h1>Test Part!</h1>
 	<h1>Select the important things in the captions!</h1>
-	<div id="question" onmouseup="labelText()">
+	<div onmouseup="labelText()">
 		<h3> Task 1: Highlight the 5 important elements</h3>
-		<div id="capImg"><img src="img/dog.png"></div>
-		<div id="captext1">
-			<p class="c1"></p>
-			<p class="c2"></p>
-			<p class="c3"></p>
-			<p class="c4"></p>
-			<p class="c5"></p>
+		<div id="egImg"><img src="img/dog.png"></div>
+		<div class="task">
+			<p>A black dog is poking his head from under a desk or table, and a person is holding its red collar.</p>
+			<p>A black dog is trying to get attention from under a desk.</p>
+			<p>An image showing a person hand caressing a black dog.</p>
+			<p>Black dog under the table wanting to get petted.</p>
+			<p>I see a black dog getting his face rubbed.</p>
 		</div>
 	</div>
-
-	<div id="dragArea">
-		<h3> Task 2: Rank the elements highlighted</h3>
-		<div id="captext2">
+	<h3> Task 2: Rank the elements highlighted</h3>
+	<div class="task">
 			<p>
 				<span> I think the most important element is</span>
 				<select name="element1" class="rankList"></select>
@@ -119,42 +105,141 @@
 				<select name="element5" class="rankList"></select>
 			</p>
 		</div>
-	</div>
+
 	<div>
 		<button class="ud" type="button" onclick="undo()">undo last step</button>
 		<button class="ca" type="button" onclick="clearAll()">clear all</button>
 	</div>
 
-	<div id="captext3">
-		<h3> Task 3: Choose the best caption </h3>
+	<h3> Task 3: Choose the best caption </h3>
+	<div class="task">
 		
+		<input type="radio" name="best">
+		<label>A black dog is poking his head from under a desk or table, and a person is holding its red collar.</label>
+	
+		<br><br>
+		<input type="radio" name="best">
+		<label>A black dog is trying to get attention from under a desk.</label>
+	
+		<br><br>
+		<input type="radio" name="best">
+		<label>An image showing a person hand caressing a black dog.</label>
+
+		<br><br>
+		<input type="radio" name="best">
+		<label>Black dog under the table wanting to get petted.</label>
+		<br><br>
+		<input type="radio" name="best">
+		<label>I see a black dog getting his face rubbed.</label>
+	</div>
+
+		<br>
+		<br>
+		<br>
+		<label class="reason">Explain the reason</label>
+		<br>
+		<br>
+		<textarea name="reason"></textarea>
+		<br>
+		<button type="button" id="test" onclick="testify()">Submit Test</button>
+
+</div>
+
+
+
+<!-- amt dynamic input part -->
+<div id="content" style="display:none">
+
+<form name='mturk_form' method='post' id='mturk_form' action='https://workersandbox.mturk.com/mturk/externalSubmit'>
+<!-- <form name='mturk_form' method='post' id='mturk_form' action='https://www.mturk.com/mturk/externalSubmit'> -->
+<input type="hidden" value="" name="assignmentId" id="assignmentId">
+<input type="hidden" value="" id="reportId">
+
+
+	<h1>Select the important elements in the captions!</h1>
+	<div onmouseup="labelText()">
+		<h3> Task 1: Highlight the 5 important elements</h3>
+		<div id="capImg"></div>
+		<div class="task">
+			<p class="c1"></p>
+			<p class="c2"></p>
+			<p class="c3"></p>
+			<p class="c4"></p>
+			<p class="c5"></p>
+		</div>
+	</div>
+
+		<h3> Task 2: Rank the elements highlighted</h3>
+		<div class="task">
+			<p>
+				<span> I think the most important element is</span>
+				<select name="element1" class="rankList"></select>
+			</p>
+			<p>
+				<span> I think the second important element is</span>
+				<select name="element2" class="rankList"></select>
+			</p>
+			<p>
+				<span> I think the third important element is</span>
+				<select name="element3" class="rankList"></select>
+			</p>
+			<p>
+				<span> I think the forth important element is</span>
+				<select name="element4" class="rankList"></select>
+			</p>
+			<p>
+				<span> I think the fifth important element is</span>
+				<select name="element5" class="rankList"></select>
+			</p>
+		</div>
+
+	<div>
+		<button class="ud" type="button" onclick="undo()">undo last step</button>
+		<button class="ca" type="button" onclick="clearAll()">clear all</button>
+	</div>
+
+
+	<h3> Task 3: Choose the best caption </h3>
+	<div class="task">
 		<input type="radio" name="best" id="b1" oninvalid="setCustomValidity('You need to at least choose one option.');" onchange="setCustomValidity('');" required>
 		<label class="c1"></label>
-		<br>
+		<br><br>
 		<input type="radio" name="best" id="b2">
 		<label class="c2"></label>
-		<br>
+		<br><br>
 		<input type="radio" name="best" id="b3">
 		<label class="c3"></label>
-		<br>
+		<br><br>
 		<input type="radio" name="best" id="b4">
 		<label class="c4"></label>
-		<br>
+		<br><br>
 		<input type="radio" name="best" id="b5">
 		<label class="c5"></label>
+	</div>
 		<br>
 		<br>
 		<br>
-		<label id="reason">Explain the reason</label>
+		<label class="reason">Explain the reason</label>
 		<br>
 		<br>
 		<textarea name="reason" oninvalid="setCustomValidity('You need to write your reason.');" onchange="setCustomValidity('');" required></textarea>
 		<br>
+		<br>
+		<div class="cmt">
+			<label class="comment">Please let us know your suggestions.</label>
+			<br>
+			<br>
+			<textarea name="comment"></textarea>
+		</div>
+		
+		<br>
+		
 		<input type="submit" name="s" value="Submit">
 
 
-	</div>
 </div>
+
+
 </form>
 
 

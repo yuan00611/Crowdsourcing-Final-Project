@@ -4,8 +4,15 @@ body{
 
 h1{
 	font-family: 'Oleo Script', cursive;
-	margin: 5px;
-	padding: 15px;
+	text-align: left;
+	color: white;
+	background-color: #C4D037;
+	border-radius: 10px;
+	size: 20px;
+	height: 60px;
+	line-height: 60px;
+	padding-left: 20px;
+	margin-top: 10px;
 }
 
 h2{
@@ -13,12 +20,14 @@ h2{
 	font-family:'Open Sans', sans-serif;
 	font-size: 18pt;
 	color: #C4D037;
+	margin:0;
 }
 
 h3{
-	padding-left: 40px;
+	padding-left: 10px;
 	font-family: 'Roboto', sans-serif;
 }
+
 
 a{
 	font-size: 25px;
@@ -144,16 +153,11 @@ p{
 	padding:1px;
 	height:1000px;
 }
-#content h1{
-	text-align: left;
-	color: white;
-	background-color: #C4D037;
-	border-radius: 10px;
-	size: 20px;
-	height: 60px;
-	line-height: 60px;
-	padding-left: 20px;
-	margin-top: 10px;
+
+#prototype {
+	margin-left:35%;
+	padding:1px;
+	height:1000px;
 }
 
 
@@ -174,35 +178,27 @@ p{
 	float: left;
 }
 
-.label{
-	width: 60px;
-}
-
-.start{
-	text-align: center;
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
-
-.option{
-	text-align: center;
-}
-
 #capImg img{
-	margin-left:40%;
+	margin-left:42%;
 	position: fixed;
 	width: 20%;
 	height: auto;
 }
 
-#captext1{
-margin:0;
-padding:0;
+#egImg img{
+	margin-left:42%;
+	position: fixed;
+	width: 20%;
+	height: auto;
 }
 
-#captext3{
+.task{
+margin-left:15px;
+width: 60%;
 font-family: "Roboto";
 }
+
+
 
 .ud {
   background-color: white; 
@@ -238,28 +234,15 @@ font-family: "Roboto";
   color: white;
 }
 
-#comment{
-	text-align: center;
+
+
+.reason{
+	font:bold 15pt "Roboto";
+	padding:15px;
 }
 
-#submitT{
-	text-align: center;
-}
 
-#question h2{
-	text-align: center;
-}
-
-.drag{
-	border: 1px solid black;
-}
-
-#dragArea{
-	height: 200px;
-
-}
-
-#reason{
+.comment{
 	font:bold 15pt "Roboto";
 	padding:15px;
 }
@@ -288,4 +271,24 @@ input[type=submit]{
 }
 input:hover {
   background-color: #A3AD2D;
+}
+
+#test{
+	padding: 20px 40px;
+	background:#C4D037;
+	border:0 none;
+	cursor:pointer;
+	-webkit-border-radius:10px;
+	border-radius:5px;
+	font:bold 18pt 'Oleo Script';
+	color: white;
+	margin-left: 16%;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+#test:hover {
+  background-color: #A3AD2D;
+}
+#comment{
+	text-align: center;
 }
