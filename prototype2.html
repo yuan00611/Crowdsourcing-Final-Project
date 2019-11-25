@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Caption Task</title>
+	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+	<link rel="stylesheet" type="text/css" href="index.css" />
+ <!--    <script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Oleo+Script|Open+Sans|Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div id="sidebar">
+	<div id="instruction">
+		<h2> Welcome</h2>
+			<p>Thank you for joining our research. Your participation will help to improve automatically-generated image captions and help blind and visually impaired people learn about the image.</p>
+			<p>To guarantee the quality of work, please read carefully the following instructions. A test needs to be passed before starting to work.</p>
+		<h2>How to do this</h2>
+			<h3>Guidance
+				<h4>Task 1</h4>
+					<p>1. Look at the image.</p>
+					<p>2. You will be shown 5 captions. Please highlight the words/phrases you think are most important to understand the image. Click your mouse and drag until the word ends will highlight the word you hope to mark.</p>
+					<p>3. You need to highlight 5 words/phrases. Only highlight the words with substantial meanings, such as "dog", "happy", "run" etc. instad of "at/in/on" "a/an/the" or "kind of".</p>
+					<p>4. The word highlighted needs to be complete.</p>
+				<h4>Task 2</h4>
+					<p>1. Rank the elements according to its importance.</p>
+					<p>2. From 1 to 5 it indicates "most important" to "least important"</p>
+				<h4>Task 3</h4>
+					<p>1. Choose your favorite caption.</p>
+					<p>2. Input reasons for your choice.</p>
+					<p>3. Click Submit button and done!</p>
+			<h3>Operation</h3>
+				<ul>
+					<li>Click and drag to highlight the elements you think are important.</li>
+					<br>
+					<li>You can change your selection by clicking the <i><b>undo last step</b></i> button to withdraw your last move, or the <i><b>clear all</b></i> button to redo the test.</li>
+				</ul>
+
+			<!--<This task aims to help blind and visually impaired people to understand images. The research results will help to improve the performance of machine in automatically generating description of the images.</p>
+			<p>Thank you for your participation and work. It might help a lot of people with visual impairment in the future.>-->
+		<script type="text/javascript" src="menulist.js"></script>
+
+		<button id="show" type="button"><span>Check examples</span></button>
+		<br>
+		<div id="example" style="display:none">
+			<table>
+				<tr>
+					<td>
+						<h3>Right example</h3>
+						<img src="img/rightexample.png">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<h3>Wrong example</h3>
+						<img src="img/wrongexample.png">
+					</td>
+				</tr>
+			</table>	
+	 	</div>
+	 	<button id="bkd" type="button"><span>Learn more</span></button>
+		<div id="moreinfo" style="display:none">
+			<p>This task aims to help blind and visually impaired people to understand images. The research results will help to improve the performance of machine in automatically generating description of the images.</p>
+	 	</div>
+	</div>
+</div>
+
+	<!-- <div class="start">
+		<a href="#train">The task will officially start after completing the following test:</a>
+	</div>
+	<div id="train"></div>
+	<div class="start">
+		<a href="#question">Let's start!</a>
+	</div> -->
+
+<!-- 以下为德元动态更新部分 -->
+
+<!-- <form name='mturk_form' method='post' id='mturk_form' action='https://workersandbox.mturk.com/mturk/externalSubmit'>
+<form name='mturk_form' method='post' id='mturk_form' action='https://www.mturk.com/mturk/externalSubmit'> -->
+<input type="hidden" value="" name="assignmentId" id="assignmentId">
+<input type="hidden" value="" id="reportId">
+
+<div id="content">
+	<h1>Select the important things in the captions!</h1>
+	<div id="question" onmouseup="labelText()">
+		<h3> Task 1: Highlight the 5 important elements</h3>
+		<div id="capImg"><img src="img/dog.png"></div>
+		<div id="captext1">
+			<p class="c1"></p>
+			<p class="c2"></p>
+			<p class="c3"></p>
+			<p class="c4"></p>
+			<p class="c5"></p>
+		</div>
+	</div>
+
+	<div id="dragArea">
+		<h3> Task 2: Rank the elements highlighted</h3>
+		<div id="captext2">
+			<p>
+				<span> I think the most important element is</span>
+				<select name="element1" class="rankList"></select>
+			</p>
+			<p>
+				<span> I think the second important element is</span>
+				<select name="element2" class="rankList"></select>
+			</p>
+			<p>
+				<span> I think the third important element is</span>
+				<select name="element3" class="rankList"></select>
+			</p>
+			<p>
+				<span> I think the forth important element is</span>
+				<select name="element4" class="rankList"></select>
+			</p>
+			<p>
+				<span> I think the fifth important element is</span>
+				<select name="element5" class="rankList"></select>
+			</p>
+		</div>
+	</div>
+	<div>
+		<button class="ud" type="button" onclick="undo()">undo last step</button>
+		<button class="ca" type="button" onclick="clearAll()">clear all</button>
+	</div>
+
+	<div id="captext3">
+		<h3> Task 3: Choose the best caption </h3>
+		
+		<input type="radio" name="best" id="b1" oninvalid="setCustomValidity('You need to at least choose one option.');" onchange="setCustomValidity('');" required>
+		<label class="c1"></label>
+		<br>
+		<input type="radio" name="best" id="b2">
+		<label class="c2"></label>
+		<br>
+		<input type="radio" name="best" id="b3">
+		<label class="c3"></label>
+		<br>
+		<input type="radio" name="best" id="b4">
+		<label class="c4"></label>
+		<br>
+		<input type="radio" name="best" id="b5">
+		<label class="c5"></label>
+		<br>
+		<br>
+		<br>
+		<label id="reason">Explain the reason</label>
+		<br>
+		<br>
+		<textarea name="reason" oninvalid="setCustomValidity('You need to write your reason.');" onchange="setCustomValidity('');" required></textarea>
+		<br>
+		<button id="test" onclick="testify()">Submit</button>
+	</div>
+</div>
+</form>
+
+
+<script type="text/javascript" src="prototype.js"></script>
+</body>
+</html>
