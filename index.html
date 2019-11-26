@@ -7,6 +7,7 @@
     <script type='text/javascript' src='https://s3.amazonaws.com/mturk-public/externalHIT_v1.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Gochi+Hand|Oleo+Script|Open+Sans|Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/532f55454b.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -14,36 +15,37 @@
 <div id="sidebar">
 	<div id="instruction">
 		<h2> Welcome</h2>
-			<p>Thank you for joining our research. Your participation will help to improve automatically-generated image captions and help blind and visually impaired people learn about the image.</p>
-			<p>To guarantee the quality of work, please read carefully the following instructions. A test needs to be passed before starting to work.</p>
-		<h2>How to do this</h2>
+			<p>Thank you for joining our research! Your involvement will help to improve automatically-generated image captions and assit blind and visually impaired people learn about image contents.</p>
+			<p>To guarantee the quality of data collected, please read carefully the following instructions and pass a <i><b>test</b></i> for getting started with the HIT.</p>
+			<p>
+		<h2>Instruction</h2>
 			<h3>Guidance
 				<h4>Task 1</h4>
 					<p>1. Look at the image.</p>
-					<p>2. You will be shown 5 captions. Please highlight the words/phrases you think are most important to understand the image. Click your mouse and drag until the word ends will highlight the word you hope to mark.</p>
-					<p>3. You need to highlight 5 words/phrases. Only highlight the words with substantial meanings, such as "dog", "happy", "run" etc. instad of "at/in/on" "a/an/the" or "kind of".</p>
-					<p>4. The word highlighted needs to be complete.</p>
+					<p>2. You will be shown 5 captions. Please highlight the words/phrases you think are most important to understand the image and hope to appear in the caption.</p>
+					<p>3. You need to highlight <b>5</b> words/phrases. The words/phrases highlighted should have <b>substantial & single</b> meanings, such as "dog", "happy", "run" etc. instead of "at/in/on" "a/an/the" or "kind of".</p>
+					<p>4. The words/phrases highlighted need to be complete.</p>
+					<p>5. Click <b>EXAMPLES</b> below for reference.</p>
 				<h4>Task 2</h4>
-					<p>1. Rank the elements according to its importance.</p>
-					<p>2. From 1 to 5 it indicates "most important" to "least important"</p>
+					<p>1. Rank the elements according to their importance in your opinion.</p>
+					<p>2. From 1 to 5 it indicates "the most important" to "the least important"</p>
 				<h4>Task 3</h4>
 					<p>1. Choose your favorite caption.</p>
-					<p>2. Input reasons for your choice.</p>
+					<p>2. Input reasons for your selections above.</p>
 					<p>3. Click Submit button and done!</p>
 			<h3>Operation</h3>
 				<ul>
-					<li>Click and drag to highlight the elements you think are important.</li>
+					<li>Click and drag to the end of words/phrases to highlight the elements you think are important.</li>
 					<br>
 					<li>You can change your selection by clicking the <i><b>undo last step</b></i> button to withdraw your last move, or the <i><b>clear all</b></i> button to redo the test.</li>
 				</ul>
 
-			<!--<This task aims to help blind and visually impaired people to understand images. The research results will help to improve the performance of machine in automatically generating description of the images.</p>
-			<p>Thank you for your participation and work. It might help a lot of people with visual impairment in the future.>-->
 		<script type="text/javascript" src="menulist.js"></script>
 
 		<button id="show" type="button"><span>Check examples</span></button>
 		<br>
-		<div id="example" style="display:none">
+		<div id="example">
+			<!-- <style="display:none"> -->
 			<table>
 				<tr>
 					<td>
@@ -61,7 +63,7 @@
 	 	</div>
 	 	<button id="bkd" type="button"><span>Learn more</span></button>
 		<div id="moreinfo" style="display:none">
-			<p>This task aims to help blind and visually impaired people to understand images. The research results will help to improve the performance of machine in automatically generating description of the images.</p>
+			<p>This task aims to help blind and visually impaired people to understand images. The research results will help to improve machine performance in generating description of the images automatically.</p>
 	 	</div>
 	</div>
 </div>
@@ -69,11 +71,13 @@
 <!-- test part -->
 
 <div id="prototype">
-	<h1>Test Part!</h1>
-	<h1>Select the important things in the captions!</h1>
+	<h1>Here goes the test. Select the important things in the captions!</h1>
 	<div onmouseup="labelText()">
 		<h3> Task 1: Highlight the 5 important elements</h3>
-		<div id="egImg"><img src="img/dog.png"></div>
+		<div id="egImg">
+			<img src="img/dog.png">
+		</div>
+
 		<div class="task">
 			<p>A black dog is poking his head from under a desk or table, and a person is holding its red collar.</p>
 			<p>A black dog is trying to get attention from under a desk.</p>
@@ -107,8 +111,8 @@
 		</div>
 
 	<div>
-		<button class="ud" type="button" onclick="undo()">undo last step</button>
-		<button class="ca" type="button" onclick="clearAll()">clear all</button>
+		<button class="ud" type="button" onclick="undo()"><i class="fas fa-history"></i>  Undo last step</button>
+		<button class="ca" type="button" onclick="clearAll()"><i class="fas fa-trash-alt"></i>  Clear all</button>
 	</div>
 
 	<h3> Task 3: Choose the best caption </h3>
@@ -160,6 +164,7 @@
 	<div onmouseup="labelText()">
 		<h3> Task 1: Highlight the 5 important elements</h3>
 		<div id="capImg"></div>
+		<button id="rotateImg" type="button"><i class="fas fa-redo-alt"></i></button>		
 		<div class="task">
 			<p class="c1"></p>
 			<p class="c2"></p>
@@ -194,8 +199,8 @@
 		</div>
 
 	<div>
-		<button class="ud" type="button" onclick="undo()">undo last step</button>
-		<button class="ca" type="button" onclick="clearAll()">clear all</button>
+		<button class="ud" type="button" onclick="undo()"><i class="fas fa-history"></i>  Undo last step</button>
+		<button class="ca" type="button" onclick="clearAll()"><i class="fas fa-trash-alt"></i>  Clear all</button>
 	</div>
 
 

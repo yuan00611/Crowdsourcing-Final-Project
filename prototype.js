@@ -50,10 +50,6 @@ function labelText()
 	
 }
 
-
-// && and
-//|| or
-//! not//
   
 function undo(){
   if(i >= 0){

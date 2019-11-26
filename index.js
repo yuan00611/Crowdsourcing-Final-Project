@@ -45,6 +45,11 @@ function insertCaption(list, caption){
   }
 }
 
+var deg = 0;
+document.getElementById("rotateImg").onclick = function () {
+  deg += 90;
+  document.getElementById("capImg").style.transform = "rotate(" + deg + "deg)";
+}
 
 function labelText()
 {
@@ -140,10 +145,11 @@ function testify(){
       subject = false;
     }else {
       subject = true;
+      break;
     }
   }
   if (subject) {
-    alert('Yeah! You have pass the test, you can start to do the formal task.')
+    alert('You have passed the test! Here comes the task.')
     clearAll();
     document.body.scrollTop = document.documentElement.scrollTop = 0;
     $(function(){
@@ -151,7 +157,7 @@ function testify(){
       $("#content").toggle();
     });
   }else {
-    alert('Do it again! You should finish all three part of task. You should also verify whether you have chose the important part of the piture!')
+    alert('Try again! 5 words are needed to be highlighted. All 3 tasks need to be completed.')
   }
 }
 
