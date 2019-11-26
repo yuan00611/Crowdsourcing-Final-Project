@@ -136,7 +136,7 @@ function deleteOption(list){
 var subject = false;
 function testify(){
   for(var u = 0; u < text.length; u++){
-    if (text[u].search == -1) {
+    if (text[u].search('dog') == -1) {
       subject = false;
     }else {
       subject = true;
@@ -145,6 +145,7 @@ function testify(){
   if (subject) {
     alert('Yeah! You have pass the test, you can start to do the formal task.')
     clearAll();
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
     $(function(){
       $("#prototype").toggle();
       $("#content").toggle();
