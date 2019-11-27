@@ -72,7 +72,7 @@
 
 <div id="prototype">
 	<h1>Here goes the test. Select the important things in the captions!</h1>
-	<div onmouseup="labelText()">
+	<div onmouseup="labelText('rankListTest')">
 		<h3> Task 1: Highlight the 5 important elements</h3>
 		<div id="egImg">
 			<img src="img/dog.png">
@@ -90,50 +90,50 @@
 	<div class="task">
 			<p>
 				<span> I think the most important element is</span>
-				<select name="element1" class="rankList"></select>
+				<select name="element1" class="rankListTest"></select>
 			</p>
 			<p>
 				<span> I think the second important element is</span>
-				<select name="element2" class="rankList"></select>
+				<select name="element2" class="rankListTest"></select>
 			</p>
 			<p>
 				<span> I think the third important element is</span>
-				<select name="element3" class="rankList"></select>
+				<select name="element3" class="rankListTest"></select>
 			</p>
 			<p>
 				<span> I think the forth important element is</span>
-				<select name="element4" class="rankList"></select>
+				<select name="element4" class="rankListTest"></select>
 			</p>
 			<p>
 				<span> I think the fifth important element is</span>
-				<select name="element5" class="rankList"></select>
+				<select name="element5" class="rankListTest"></select>
 			</p>
 		</div>
 
 	<div>
-		<button class="ud" type="button" onclick="undo()"><i class="fas fa-history"></i>  Undo last step</button>
-		<button class="ca" type="button" onclick="clearAll()"><i class="fas fa-trash-alt"></i>  Clear all</button>
+		<button class="ud" type="button" onclick="undo('rankListTest')"><i class="fas fa-history"></i>  Undo last step</button>
+		<button class="ca" type="button" onclick="clearAll('rankListTest')"><i class="fas fa-trash-alt"></i>  Clear all</button>
 	</div>
 
 	<h3> Task 3: Choose the best caption </h3>
 	<div class="task">
 		
-		<input type="radio" name="best">
+		<input type="radio" name="bestTest">
 		<label>A black dog is poking his head from under a desk or table, and a person is holding its red collar.</label>
 	
 		<br><br>
-		<input type="radio" name="best">
+		<input type="radio" name="bestTest">
 		<label>A black dog is trying to get attention from under a desk.</label>
 	
 		<br><br>
-		<input type="radio" name="best">
+		<input type="radio" name="bestTest">
 		<label>An image showing a person hand caressing a black dog.</label>
 
 		<br><br>
-		<input type="radio" name="best">
+		<input type="radio" name="bestTest">
 		<label>Black dog under the table wanting to get petted.</label>
 		<br><br>
-		<input type="radio" name="best">
+		<input type="radio" name="bestTest">
 		<label>I see a black dog getting his face rubbed.</label>
 	</div>
 
@@ -161,7 +161,7 @@
 
 
 	<h1>Select the important elements in the captions!</h1>
-	<div onmouseup="labelText()">
+	<div onmouseup="labelText('rankList')">
 		<h3> Task 1: Highlight the 5 important elements</h3>
 		<div id="capImg"></div>
 		<button id="rotateImg" type="button"><i class="fas fa-redo-alt"></i></button>		
@@ -199,14 +199,14 @@
 		</div>
 
 	<div>
-		<button class="ud" type="button" onclick="undo()"><i class="fas fa-history"></i>  Undo last step</button>
-		<button class="ca" type="button" onclick="clearAll()"><i class="fas fa-trash-alt"></i>  Clear all</button>
+		<button class="ud" type="button" onclick="undo('rankList')"><i class="fas fa-history"></i>  Undo last step</button>
+		<button class="ca" type="button" onclick="clearAll('rankList')"><i class="fas fa-trash-alt"></i>  Clear all</button>
 	</div>
 
 
 	<h3> Task 3: Choose the best caption </h3>
 	<div class="task">
-		<input type="radio" name="best" id="b1" oninvalid="setCustomValidity('You need to at least choose one option.');" onchange="setCustomValidity('');" required>
+		<input type="radio" name="best" id="b1">
 		<label class="c1"></label>
 		<br><br>
 		<input type="radio" name="best" id="b2">

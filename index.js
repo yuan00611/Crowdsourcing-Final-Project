@@ -51,7 +51,7 @@ document.getElementById("rotateImg").onclick = function () {
   document.getElementById("capImg").style.transform = "rotate(" + deg + "deg)";
 }
 
-function labelText()
+function labelText(list)
 {
 	var selection = window.getSelection();
 	var range = selection.getRangeAt(0);
@@ -72,7 +72,7 @@ function labelText()
 		//console.log(node.innerText);
 		//console.log(range.commonAncestorContainer.outerText);
 
-    l = document.getElementsByClassName("rankList");
+    l = document.getElementsByClassName(list);
 
     addOption(l, node.innerText);
     text.push(node.innerText);
@@ -93,7 +93,7 @@ function labelText()
 	
 }
 
-function undo(){
+function undo(list){
   if(i >= 0){
     i = i - 1;
     last = document.getElementById(i);
@@ -102,12 +102,12 @@ function undo(){
     text.pop();
     last.parentNode.removeChild(last);
 
-    l = document.getElementsByClassName("rankList");
+    l = document.getElementsByClassName(list);
     deleteOption(l);
   }
 }
 
-function clearAll(){
+function clearAll(list){
   for(var j = i - 1; j >= 0; j--){
 
     last = document.getElementById(j);
@@ -116,7 +116,7 @@ function clearAll(){
     text.pop();
     last.parentNode.removeChild(last);
 
-    l = document.getElementsByClassName("rankList");
+    l = document.getElementsByClassName(list);
     deleteOption(l);
   }
   i = 0;
@@ -139,6 +139,9 @@ function deleteOption(list){
 }
 
 var subject = false;
+var radiotest = false;
+var optionTest = false;
+
 function testify(){
   for(var u = 0; u < text.length; u++){
     if (text[u].search('dog') == -1) {
@@ -148,20 +151,82 @@ function testify(){
       break;
     }
   }
-  if (subject) {
+  var rList = document.getElementsByName("bestTest");
+  for(var u = 0; u < rList.length; u++){
+    if (rList[u].checked == true) {
+      radiotest = true;
+      break;
+    }
+  }
+
+  l = document.getElementsByClassName("rankListTest");
+
+  for(var v = 0; v < l.length - 1; v++){
+    //console.log(l[v].value);
+    for(var w = v+1; w < l.length; w++){
+      if (l[v].value == l[w].value) {
+        optionTest = false;
+        break;
+      }else {
+        optionTest = true;
+      }
+    }
+  }
+
+  if (subject && radiotest && optionTest) {
+    clearAll(l);
     alert('You have passed the test! Here comes the task.')
-    clearAll();
     document.body.scrollTop = document.documentElement.scrollTop = 0;
     $(function(){
       $("#prototype").toggle();
       $("#content").toggle();
     });
   }else {
-    alert('Try again! 5 words are needed to be highlighted. All 3 tasks need to be completed.')
+    alert('Try again! 5 important words are needed to be highlighted. All 3 tasks need to be completed.')
   }
 }
 
 
+
+var form = document.querySelector("form");
+form.onsubmit = function(e){
+  e.preventDefault();
+
+  var checked = false;
+  var choice = form.elements["best"];
+  for(var u = 0; u < choice.length; u++){
+    if(choice[u].checked == true){
+      checked = true;
+      break;
+    }
+  }
+
+  var optionChecked = false;
+
+  l = document.getElementsByClassName("rankList");
+
+  for(var v = 0; v < l.length - 1; v++){
+    //console.log(l[v].value);
+    for(var w = v+1; w < l.length; w++){
+      if (l[v].value == l[w].value) {
+        optionChecked = false;
+        break;
+      }else {
+        optionChecked = true;
+      }
+    }
+  }
+
+  if (!checked && !optionChecked) {
+    alert("You didn't complete all the task. Please try again.")
+  }else if (!checked) {
+    alert("Please select at least one best image caption and answer the reason. :) ")
+  }else if (!optionChecked) {
+    alert("Please select 5 important elements and rank every element differently.")
+  }else {
+    form.submit();
+  }
+}
 
 /*
 function dragElement(elmnt) {
